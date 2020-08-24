@@ -18,15 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Sirius SAT School 2020
+title: Sirius SAT/CFS School 2020
 email: lipen00@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
+description: >-
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-# baseurl: "/sirius-sat-school-2020" # the subpath of your site, e.g. /blog
-url: "https://lipen.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: Lipen
+baseurl: "/sirius-2020"
+url: "https://lipen.github.io"
 github_username:  Lipen
 
 # Build settings
@@ -46,13 +45,8 @@ author:
   name   : "Konstantin Chukharev"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "My awesome biography constrained to a sentence or two goes here."
-  links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://lipen.github.io"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/Lipen"
+  uri    : "https://lipen.github.io"
+  github : "Lipen"
 
 defaults:
   # _posts
@@ -73,10 +67,3 @@ defaults:
     values:
       layout: single
       author_profile: false
-
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/

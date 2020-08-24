@@ -2,4 +2,4 @@
 :toc: macro
 
 image:https://github.com/Lipen/sirius-2020/workflows/Deploy/badge.svg?branch=master["Deploy status", link="https://github.com/Lipen/sirius-2020/actions"]
-image:https://img.shields.io/badge/site-Github_Pages-blue?style=for-the-badge["Site on Github Pages", link="https://lipen.github.io/sirius-2020"]
+image:https://img.shields.io/badge/Site-GitHub_Pages-blue?logo=jekyll["Site on Github Pages", link="https://lipen.github.io/sirius-2020"]
