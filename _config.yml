@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Sirius SAT/CFS School 2020
+title: Sirius SAT/CPS School 2020
 email: lipen00@gmail.com
 description: >-
   Write an awesome description for your new site here. You can edit this

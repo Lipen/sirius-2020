@@ -1,4 +1,4 @@
-= Sirius SAT/CFS School 2020
+= Sirius SAT/CPS School 2020
 :toc: macro
 
 image:https://github.com/Lipen/sirius-2020/workflows/Deploy/badge.svg?branch=master["Deploy status", link="https://github.com/Lipen/sirius-2020/actions"]
