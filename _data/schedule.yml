@@ -9,7 +9,7 @@ events:
     speaker: В.Вяткин
     title: "Введение в киберфизические системы"
     type: "Лекция"
-    pdf: "L1 iCPS_compressed.pdf"
+    pdf: "L1 iCPS.pdf"
   - time: "11:40–12:00"
     date: 2020-08-17
     type: "Перерыв"
@@ -19,7 +19,7 @@ events:
     speaker: В.Вяткин
     title: "Основы программирования контроллеров для КФС"
     type: "Лекция"
-    pdf: "L2 FB and Verification_compressed.pdf"
+    pdf: "L2 FB and Verification.pdf"
   - time: "13:30–14:30"
     date: 2020-08-17
     type: "Перерыв"
