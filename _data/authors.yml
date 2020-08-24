@@ -1,0 +1,23 @@
+Lipen:
+  name   : "Konstantin Chukharev"
+  avatar : "/assets/images/bio-photo.jpg"
+  bio    : >-
+    My awesome biography constrained to a sentence or two goes here.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, lacus sed gravida iaculis, nisl arcu molestie felis, vel viverra ex urna et erat. In aliquam ex eget varius ultricies. Aliquam at molestie mi, vitae dapibus leo. Ut metus turpis, varius nec velit id, iaculis venenatis nisi.
+  uri    : "https://lipen.github.io"
+  github : "Lipen"
+  # links:
+  #   - label: "Website"
+  #     icon: "fas fa-fw fa-link"
+  #     url: "https://lipen.github.io"
+  #   - label: "GitHub"
+  #     icon: "fab fa-fw fa-github"
+  #     url: "https://github.com/Lipen"
+
+mrX:
+  name: "Mr. X"
+  bio: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, lacus sed gravida iaculis, nisl arcu molestie felis, vel viverra ex urna et erat. In aliquam ex eget varius ultricies. Aliquam at molestie mi, vitae dapibus leo. Ut metus turpis, varius nec velit id, iaculis venenatis nisi.
+
+mrY:
+  name: "Mr. Y"

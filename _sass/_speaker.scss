@@ -1,0 +1,50 @@
+.speaker__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0;
+}
+
+.speaker__avatar {
+    margin-right: 20px;
+
+    img {
+        max-width: 120px;
+        border-radius: 50%;
+        padding: 5px;
+        border: 1px solid $border-color;
+    }
+}
+
+.speaker__content-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+}
+
+.speaker__name-links-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.speaker__name {
+    flex-shrink: 0;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.speaker__links-wrapper {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    margin: 0 -5px;
+}
+
+.speaker__link {
+    margin: 0 5px;
+}
+
+.speaker__bio {
+    margin: 0;
+    margin-top: 5px;
+}

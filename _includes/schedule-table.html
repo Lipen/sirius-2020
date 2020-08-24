@@ -1,0 +1,59 @@
+<table>
+  {% if include.caption %}
+    <caption>{{ include.caption }}</caption>
+  {% endif %}
+  <thead>
+    <tr>
+      <th>Время</th>
+      <th>Что</th>
+      <th>Название</th>
+      <th>Рассказчик</th>
+      <th>Слайды</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for event in include.events %}
+      <tr>
+        <!-- Time -->
+        <td style="white-space:nowrap;">
+          {{ event.time }}
+        </td>
+        {% if event.merge %}
+          <!-- Type/Title (merged) -->
+          <td colspan="4">
+            {% if event.title %}
+              {{ event.title }}
+            {% elsif event.type %}
+              {{ event.type }}
+            {% endif %}
+          </td>
+        {% else %}
+          <!-- Type -->
+          <td>
+            {{ event.type }}
+          </td>
+          <!-- Title -->
+          <td>
+            {{ event.title }}
+          </td>
+          <!-- Speaker -->
+          <td style="white-space:nowrap;">
+            {{ event.speaker }}
+          </td>
+          <!-- Slides -->
+          <td>
+            {% if event.pdf %}
+              <a href="{{ event.pdf | prepend: "/assets/slides/" | relative_url }}" target="_blank">PDF</a>
+            {% endif %}
+            {% if event.pptx %}
+              <a href="{{ event.pptx | prepend: "/assets/slides/" | relative_url }}" target="_blank">PPTX</a>
+            {% endif %}
+            {% if event.url %}
+              <a href="{{ event.url }}" target="_blank" rel="noreferrer noopener">link</a>
+            {% endif %}
+          </td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

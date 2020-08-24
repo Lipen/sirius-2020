@@ -1,0 +1,15 @@
+---
+permalink: /speakers/
+title: Speakers
+layout: splash
+---
+
+<h1>Speakers</h1>
+
+<ul class="fa-ul">
+  {% for author in site.data.authors %}
+    <li><span class="fa-li"><i class="fas fa-angle-right"></i></span>
+      {% include speaker.html author=author %}
+    </li>
+  {% endfor %}
+</ul>

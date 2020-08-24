@@ -1,0 +1,264 @@
+<div itemscope itemtype="https://schema.org/Person">
+  {% assign speaker = include.author[1] %}
+
+  <div class="speaker__wrapper">
+
+      <!-- Avatar -->
+      {% if speaker.avatar %}
+        <div class="speaker__avatar">
+          {% capture speaker_avatar %}
+            <img src="{{ speaker.avatar | relative_url }}" alt="{{ speaker.name }}" itemprop="image">
+          {% endcapture %}
+          {% if speaker.home %}
+            <a href="{{ speaker.home | relative_url }}">{{ speaker_avatar }}</a>
+          {% else %}
+            {{ speaker_avatar }}
+          {% endif %}
+        </div>
+      {% endif %}
+
+    <!-- Content = Name + Links + Bio -->
+    <div class="speaker__content-wrapper">
+
+      <!-- Name + Links -->
+      <div class="speaker__name-links-wrapper">
+
+        <!-- Name -->
+        {% capture speaker_name %}
+          <h3 class="speaker__name" itemprop="name">{{ speaker.name }}</h3>
+        {% endcapture %}
+        {% if speaker.home %}
+          <a href="{{ speaker.home | relative_url }}">{{ speaker_name }}</a>
+        {% else %}
+          {{ speaker_name }}
+        {% endif %}
+
+        <!-- Links -->
+        <div class="speaker__links-wrapper">
+          {% if speaker.links %}
+            {% for link in speaker.links %}
+              {% if link.label and link.url %}
+                <div class="speaker__link">
+                  <a href="{{ link.url }}" rel="nofollow noopener noreferrer">
+                    <i class="{{ link.icon | default: 'fas fa-fw fa-link' }}" aria-hidden="true"></i><span class="label">{{ link.label }}</span>
+                  </a>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+
+          {% if speaker.uri %}
+            <div class="speaker__link">
+              <a href="{{ speaker.uri }}" itemprop="url">
+                <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.email %}
+            <div class="speaker__link">
+              <a href="mailto:{{ speaker.email }}">
+                <meta itemprop="email" content="{{ speaker.email }}" />
+                <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.keybase %}
+            <div class="speaker__link">
+              <a href="https://keybase.io/{{ speaker.keybase }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fas fa-fw fa-key" aria-hidden="true"></i><span class="label">Keybase</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.twitter %}
+            <div class="speaker__link">
+              <a href="https://twitter.com/{{ speaker.twitter }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.facebook %}
+            <div class="speaker__link">
+              <a href="https://www.facebook.com/{{ speaker.facebook }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.linkedin %}
+            <div class="speaker__link">
+              <a href="https://www.linkedin.com/in/{{ speaker.linkedin }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.xing %}
+            <div class="speaker__link">
+              <a href="https://www.xing.com/profile/{{ speaker.xing }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-xing-square" aria-hidden="true"></i><span class="label">XING</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.instagram %}
+            <div class="speaker__link">
+              <a href="https://instagram.com/{{ speaker.instagram }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.tumblr %}
+            <div class="speaker__link">
+              <a href="https://{{ speaker.tumblr }}.tumblr.com" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-tumblr-square" aria-hidden="true"></i><span class="label">Tumblr</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.bitbucket %}
+            <div class="speaker__link">
+              <a href="https://bitbucket.org/{{ speaker.bitbucket }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-bitbucket" aria-hidden="true"></i><span class="label">Bitbucket</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.github %}
+            <div class="speaker__link">
+              <a href="https://github.com/{{ speaker.github }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.gitlab %}
+            <div class="speaker__link">
+              <a href="https://gitlab.com/{{ speaker.gitlab }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-gitlab" aria-hidden="true"></i><span class="label">GitLab</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.stackoverflow %}
+            <div class="speaker__link">
+              <a href="https://stackoverflow.com/users/{{ speaker.stackoverflow }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i><span class="label">Stack Overflow</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.lastfm %}
+            <div class="speaker__link">
+              <a href="https://last.fm/user/{{ speaker.lastfm }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-lastfm-square" aria-hidden="true"></i><span class="label">Last.fm</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.dribbble %}
+            <div class="speaker__link">
+              <a href="https://dribbble.com/{{ speaker.dribbble }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-dribbble" aria-hidden="true"></i><span class="label">Dribbble</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.pinterest %}
+            <div class="speaker__link">
+              <a href="https://www.pinterest.com/{{ speaker.pinterest }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-pinterest" aria-hidden="true"></i><span class="label">Pinterest</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.foursquare %}
+            <div class="speaker__link">
+              <a href="https://foursquare.com/{{ speaker.foursquare }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-foursquare" aria-hidden="true"></i><span class="label">Foursquare</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.steam %}
+            <div class="speaker__link">
+              <a href="https://steamcommunity.com/id/{{ speaker.steam }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-steam" aria-hidden="true"></i><span class="label">Steam</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.youtube %}
+            {% if speaker.youtube contains "://" %}
+              <div class="speaker__link">
+                <a href="{{ speaker.youtube }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                  <i class="fab fa-fw fa-youtube" aria-hidden="true"></i><span class="label">YouTube</span>
+                </a>
+              </div>
+            {% elsif speaker.youtube %}
+              <div class="speaker__link">
+                <a href="https://www.youtube.com/user/{{ speaker.youtube }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                  <i class="fab fa-fw fa-youtube" aria-hidden="true"></i><span class="label">YouTube</span>
+                </a>
+              </div>
+            {% endif %}
+          {% endif %}
+
+          {% if speaker.soundcloud %}
+            <div class="speaker__link">
+              <a href="https://soundcloud.com/{{ speaker.soundcloud }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i><span class="label">SoundCloud</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.weibo %}
+            <div class="speaker__link">
+              <a href="https://www.weibo.com/{{ speaker.weibo }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-weibo" aria-hidden="true"></i><span class="label">Weibo</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.flickr %}
+            <div class="speaker__link">
+              <a href="https://www.flickr.com/{{ speaker.flickr }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-flickr" aria-hidden="true"></i><span class="label">Flickr</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.codepen %}
+            <div class="speaker__link">
+              <a href="https://codepen.io/{{ speaker.codepen }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-codepen" aria-hidden="true"></i><span class="label">CodePen</span>
+              </a>
+            </div>
+          {% endif %}
+
+          {% if speaker.vine %}
+            <div class="speaker__link">
+              <a href="https://vine.co/u/{{ speaker.vine }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+                <i class="fab fa-fw fa-vine" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</span>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+
+      </div>
+
+      <!-- Bio -->
+      {% if speaker.bio %}
+        <div class="speaker__bio" itemprop="description">
+          {{ speaker.bio | markdownify }}
+        </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>

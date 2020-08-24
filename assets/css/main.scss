@@ -1,0 +1,17 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+$serif: "PT Serif", "Georgia", "Times", serif;
+$sans-serif: -apple-system, BlinkMacSystemFont, "Montserrat", "PT Sans", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", "Arial", sans-serif;
+
+$right-sidebar-width-narrow: 200px; // 200px
+$right-sidebar-width: 200px; // 300px
+$right-sidebar-width-wide: 400px; // 400px
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+@import "mystyle";
